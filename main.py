@@ -31,7 +31,12 @@ class Blockchain(object):
         #La dedans on met le nécessaire pour créer un bloc
 
     def nouvelle_transaction(self, expediteur, destinataire, valeur):
-        pass
+        self.transactions_existantes.append({
+            'expediteur': expediteur,
+            'destinataire': destinataire,
+            'valeur': valeur,
+        })
+        return self.last_block['index'] + 1
         #Pareil mais pour une transaction. Doit renvoyer le numéro du bloc qui la récupère.
 
     @staticmethod

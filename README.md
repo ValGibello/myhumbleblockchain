@@ -1,2 +1,2 @@
 # myhumbleblockchain
-Some talk blockchain, I'm trying to build one.
+Talking is nice, doing is better!

@@ -114,8 +114,10 @@ app = Flask(__name__) #instanciation du noeud
 identifiant_noeud = str(uuid4()).replace('-', '') #génération d'une URL unique pour le noeud
 blockchain = Blockchain()   #instanciation de la blockchain
 
-@app.route('/mine', methods=['GET'])
-def mine():
+#Reste à tout mettre en réseau - tuez moi
+
+@app.route('/minage', methods=['GET'])
+def minage():
     dernier_bloc = blockchain.dernier_bloc
     derniere_preuve = dernier_bloc['preuve']
     preuve = blockchain.preuve_de_travail(derniere_preuve)
@@ -175,6 +177,7 @@ def consensus():
             'chaine': blockchain.chaine
         }
     return jsonify(reponse), 200
+
 
 if __name__ == '__main__':
     from argparse import ArgumentParser

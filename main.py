@@ -72,6 +72,7 @@ class Blockchain(object):
         while self.preuve_valide(derniere_preuve, preuve) is False:
             preuve += 1
         return preuve
+    #Gros problème dans ma preuve de travail : je n'ai pas inclu dans le calcul les transactions précédentes. Ajouter le hash du dernier bloc à la concaténation quand j'aurais retrouvé ma santé mentale.
 
     #Le fameux algo de consensus pour résoudre les conflits de chaine
     def resolution_conflits(self):

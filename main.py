@@ -149,7 +149,7 @@ def nouvelle_transaction():
     reponse = {'message': f'La transaction va être ajoutée au bloc {index}'}
     return jsonify(reponse), 201
 
-@app.route('/noeuds/registre', methodes=['POST'])
+@app.route('/noeuds/registre', methods=['POST'])
 def ajout_noeud():
     valeurs = request.get_json()
     noeuds = valeurs.get('noeuds')
@@ -163,7 +163,7 @@ def ajout_noeud():
     }
     return jsonify(reponse), 201
 
-@app.route('/noeufs/resolution', methodes=['GET'])
+@app.route('/noeufs/resolution', methods=['GET'])
 def consensus():
     chaine_ecrasee = blockchain.resolution_conflits()
     if chaine_ecrasee:

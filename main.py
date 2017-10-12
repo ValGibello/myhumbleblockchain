@@ -21,7 +21,7 @@ class Blockchain(object):
         self.transactions_existantes = []
         self.noeuds = set()
 
-        self.new_bloc(hash_precedent=1, preuve=100)
+        self.nouveau_bloc(hash_precedent=1, preuve=100)
         #On commence par créer une liste vide qui servira de blockchain, après tout pourquoi pas. Idem pour transactions et noeuds.
 
     def nouveau_bloc(self, preuve, hash_precedent=None):
@@ -146,7 +146,7 @@ def nouvelle_transaction():
         return 'Valeurs manquantes.', 400
 
     index = blockchain.nouvelle_transaction(valeurs['expediteur'], valeurs['destinataire'], valeurs['montant'])
-    reponse = {'message': f''La transaction va être ajoutée au bloc {index}'}
+    reponse = {'message': f'La transaction va être ajoutée au bloc {index}'}
     return jsonify(reponse), 201
 
 @app.route('/noeuds/registre', methodes=['POST'])
@@ -187,3 +187,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     port = args.port
     app.run(host='0.0.0.0', port=port)
+    
+#Je remercie les 67 000 guides et tutoriaux de l'internet et les milliers de posts stack exchange sans qui je ne serais pas arrivé là.
